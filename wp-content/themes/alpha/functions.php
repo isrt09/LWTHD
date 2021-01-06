@@ -12,3 +12,5 @@ function alpha_assets(){
 	wp_enqueue_style("bootstrap",'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
 }
 add_action('wp_enqueue_scripts','alpha_assets');
+
+
