@@ -20,14 +20,16 @@
                     </div>
                     <div class="col-md-10 offset-md-1 text-justify">
                        <p><?php the_post_thumbnail('large',['class'=>'img-fluid']);?></p>
-                       <?php the_content(); ?>
+                       <?php the_content();?>
+                       <?php  next_post_link();
+                    previous_post_link(); ?>
                     </div>
                     <?php  if(comments_open()) :?>                                     
                         <div class="col-md-10 offset-md-1">                       
                            <?php comments_template(); ?>
                         </div>
-                    <?php endif; ?>
-                </div>
+                    <?php endif; ?>                                      
+                </div>                
             </div>          
         </div>      
     <?php }
