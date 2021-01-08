@@ -23,7 +23,27 @@ function alpha_sidebar(){
 		'before_title'  => '<h2 class="widget-title>',
 		'after_title'   => '</h2>'
 	]);
+
+	register_sidebar([
+		'name' 			=> __('Footer Left Sidebar','alpha'),
+		'id'   			=> 'sidebar-2',
+		'description'   => __('Footer Left Sidebar','alpha'),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  =>'</section>',
+		'before_title'  => '',
+		'after_title'   => ''
+	]);
+	register_sidebar([
+		'name' 			=> __('Footer Right Sidebar','alpha'),
+		'id'   			=> 'sidebar-3',
+		'description'   => __('Footer Right Sidebar','alpha'),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  =>'</section>',
+		'before_title'  => '',
+		'after_title'   => ''
+	]);
 }
+
 
 add_action('widgets_init','alpha_sidebar');
 
