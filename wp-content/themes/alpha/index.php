@@ -22,10 +22,10 @@
                     </div>
                     <div class="col-md-8  text-justify">
                         <p><?php the_post_thumbnail('large',['class'=>'img-fluid']);?></p>                       
-                           <?php 
+                           <?php                                
                                 if(is_single()): the_content();
                                     else : the_excerpt();
-                                endif;
+                                endif;                           
                             ?>                                                          
                     </div>
                 </div>

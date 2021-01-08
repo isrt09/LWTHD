@@ -3,6 +3,8 @@ function alpha_bootstrap(){
 	load_theme_textdomain('alpha');
 	add_theme_support('post-thumbnails');
 	add_theme_support('title-tag');
+	register_nav_menu('topmenu',__("Top Menu","alpha"));
+	register_nav_menu('footermenu',__("Footer Menu","alpha"));
 }
 
 add_action('after_setup_theme','alpha_bootstrap');
@@ -46,4 +48,14 @@ function alpha_sidebar(){
 
 
 add_action('widgets_init','alpha_sidebar');
+
+
+function filter_handler( $classes, $item, $args, $depth ){
+	$classes[] = "list-inline-item";
+	return $classes;
+} 
+ 
+add_filter( 'nav_menu_css_class', 'filter_handler', 10, 4 ); 
+
+
 
