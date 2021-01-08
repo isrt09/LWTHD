@@ -21,12 +21,17 @@
                         <?php echo get_the_tag_list("<ul class=\"list-unstyled\"><li>","</li><li>","</li></ul>"); ?>
                     </div>
                     <div class="col-md-8  text-justify">
-                        <p><?php the_post_thumbnail('large',['class'=>'img-fluid']);?></p>                       
-                           <?php                                
-                                if(is_single()): the_content();
-                                    else : the_excerpt();
-                                endif;                           
-                            ?>                                                          
+                        <p><?php 
+                            $thumbnail_url = get_the_post_thumbnail_url(null,'large');
+                            echo '<a href="'.$thumbnail_url.'" data-featherlight="image">';
+                            the_post_thumbnail('large',['class'=>'img-fluid']);
+                            echo "</a>";?>                            
+                        </p> 
+                       <?php                                
+                            if(is_single()): the_content();
+                                else : the_excerpt();
+                            endif;                           
+                        ?>                                                          
                     </div>
                 </div>
             </div>          

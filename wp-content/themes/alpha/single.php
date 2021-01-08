@@ -21,10 +21,17 @@
                                     </p>                        
                                 </div>
                                 <div class="col-md-10">
-                                   <p><?php the_post_thumbnail('large',['class'=>'img-fluid']);?></p>
-                                   <?php the_content();?>
-                                   <?php  next_post_link(); ?>
-                                   <?php previous_post_link(); ?>
+                                   <?php 
+                                        if(has_post_thumbnail()){
+                                            $thumbnail_url = get_the_post_thumbnail_url(null,'large');
+                                            echo '<a href="'.$thumbnail_url.'" data-featherlight="image">';
+                                            the_post_thumbnail('large',['class'=>'img-fluid']);
+                                            echo "</a>";
+                                            the_content();
+                                            next_post_link();
+                                            previous_post_link();
+                                        }
+                                    ?>                                                                     
                                 </div>
                                 <?php  if(comments_open()) :?>                                     
                                     <div class="col-md-10 offset-md-1">                       

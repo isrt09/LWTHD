@@ -11,7 +11,9 @@ add_action('after_setup_theme','alpha_bootstrap');
 
 function alpha_assets(){
 	wp_enqueue_style('alpha',get_stylesheet_uri());
-	wp_enqueue_style("bootstrap",'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
+	wp_enqueue_style("bootstrap",'//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
+	wp_enqueue_style("featherlight-css",'//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css');
+	wp_enqueue_script('featherlight-js','//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js',['jquery'],"1.0.1",true);
 }
 add_action('wp_enqueue_scripts','alpha_assets');
 
@@ -50,12 +52,7 @@ function alpha_sidebar(){
 add_action('widgets_init','alpha_sidebar');
 
 
-function filter_handler( $classes, $item, $args, $depth ){
-	$classes[] = "list-inline-item";
-	return $classes;
-} 
- 
-add_filter( 'nav_menu_css_class', 'filter_handler', 10, 4 ); 
+
 
 
 
