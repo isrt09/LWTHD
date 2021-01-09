@@ -58,6 +58,22 @@ function alpha_sidebar(){
 
 add_action('widgets_init','alpha_sidebar');
 
+function about_page_inline_style(){
+	if(is_page()){
+		 $alpha_feature_image = get_the_post_thumbnail_url(null,"page");
+	}
+?>
+<style>
+	/*
+		here our style code for inline section		
+	*/
+	.page-header{
+		background-image: url(<?php echo $alpha_feature_image?>);
+	}
+</style>
+<?php }
+add_action('wp_head','about_page_inline_style',100);
+
 
 
 
