@@ -1,4 +1,10 @@
 <?php 
+
+if(site_url() == 'http://localhost/LWTHD'){
+	define("VERSION",time());
+}else{
+	define("VERSION",wp_get_theme()->get("VERSION"));
+}
 function alpha_bootstrap(){
 	load_theme_textdomain('alpha');
 	add_theme_support('post-thumbnails');
@@ -10,11 +16,11 @@ function alpha_bootstrap(){
 add_action('after_setup_theme','alpha_bootstrap');
 
 function alpha_assets(){
-	wp_enqueue_style('alpha',get_stylesheet_uri());
+	wp_enqueue_style('alpha',get_stylesheet_uri(),null,VERSION);
 	wp_enqueue_style("bootstrap",'//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
 	wp_enqueue_style("featherlight-css",'//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css');
-	wp_enqueue_script('featherlight-js','//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js',['jquery'],"1.0.1",true);
-	wp_enqueue_script('main-js',get_template_directory_uri()."/assets/js/main.js",null,"1.0.0",true);
+	wp_enqueue_script('featherlight-js','//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js',['jquery'],VERSION,true);
+	wp_enqueue_script('main-js',get_template_directory_uri()."/assets/js/main.js",null,VERSION,true);
 }
 add_action('wp_enqueue_scripts','alpha_assets');
 
