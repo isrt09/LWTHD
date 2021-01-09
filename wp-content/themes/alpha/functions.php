@@ -9,7 +9,11 @@ function alpha_bootstrap(){
 	load_theme_textdomain('alpha');
 	add_theme_support('post-thumbnails');
 	add_theme_support('title-tag');
-	add_theme_support('custom-header');
+	$alpha_custom_header = [
+		'header-text' => true,
+		'default-text-color' =>'#222'
+	];
+	add_theme_support('custom-header',$alpha_custom_header);
 	register_nav_menu('topmenu',__("Top Menu","alpha"));
 	register_nav_menu('footermenu',__("Footer Menu","alpha"));
 }
@@ -65,9 +69,7 @@ function about_page_inline_style(){
 	}
 ?>
 <style>
-	/*
-		here our style code for inline section		
-	*/
+	/* here our style code for inline section */
 	.page-header{
 		background-image: url(<?php echo $alpha_feature_image?>);
 	}
@@ -75,16 +77,16 @@ function about_page_inline_style(){
 <?php 
 	if(is_front_page()){
 		if(current_theme_supports("custom-header")){?>
-
 		<style>
 			.header{
 				background-image: url(<?php echo header_image(); ?>);
-			}						
+			}
+			.header h1.heading a, .header h3.tagline{
+				color:#<?php echo get_header_textcolor(); ?>;					;
+			}				
 		</style>
-
 		<?php }
 	}
-
 }
 add_action('wp_head','about_page_inline_style',100);
 
