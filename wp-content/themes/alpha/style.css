@@ -105,3 +105,6 @@ h2.post-title {
     text-decoration: none;
     color:#000;
 }
+img.custom-logo {
+    border-radius: 50px;
+}

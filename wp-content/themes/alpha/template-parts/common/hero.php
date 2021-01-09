@@ -1,6 +1,9 @@
 <div class="header">
     <div class="container">
         <div class="row">
+            <div class="col-md-12 text-center header-logo mt-3">
+                <?php the_custom_logo(); ?>
+            </div>
             <div class="col-md-12">
                 <h3 class="tagline"><?php bloginfo('description'); ?></h3>
                 <h1 class="align-self-center display-1 text-center heading"><a href="<?php echo home_url('/'); ?>"><?php bloginfo('title'); ?></a></h1>
