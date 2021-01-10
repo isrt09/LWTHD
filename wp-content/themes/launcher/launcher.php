@@ -5,7 +5,11 @@ Template Name: Launcher Home Page
 ?>
 <?php 
 the_post();
-get_header(); ?>
+get_header(); 
+$placeholderText = get_post_meta(get_the_ID(),"placeholder_text",true);
+$button			 = get_post_meta(get_the_ID(),"button",true);
+$hint			 = get_post_meta(get_the_ID(),"hint",true);
+?>
 <body class="<?php body_class(); ?>">
 	<div class="fh5co-loader"></div>
 
@@ -30,9 +34,9 @@ get_header(); ?>
 							<div class="col-lg-7 animate-box">
 								<form action="#" id="fh5co-subscribe">
 									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Enter your email">
-										<input type="submit" value="Send" class="btn btn-primary">
-										<p class="tip">Please enter your email address for early access.</p>
+										<input type="text" class="form-control" placeholder="<?php echo esc_attr($placeholderText); ?>">
+										<input type="submit" value="<?php echo esc_attr($button); ?>" class="btn btn-primary">
+										<p class="tip"><?php echo esc_attr($hint); ?></p>
 									</div>
 								</form>
 							</div>
