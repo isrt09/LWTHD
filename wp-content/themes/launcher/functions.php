@@ -26,6 +26,7 @@ function launcher_assets(){
 			$launcherMonth = get_post_meta(get_the_ID(),"month",true);
 			$launcherDay   = get_post_meta(get_the_ID(),"day",true);
 
+			// PHP to JS Data Passing
 			wp_localize_script("main","dataJSON",[
 				"year"  => $launcherYear,
 				"month" => $launcherMonth,
