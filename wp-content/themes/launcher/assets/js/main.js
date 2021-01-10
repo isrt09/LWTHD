@@ -86,11 +86,11 @@
 	};
 
 	var countDown = function() {
-
+		console.log(dataJSON);
 		simplyCountdown('.simply-countdown-one', {
-			year: "2021",
-			month: "01",
-			day: "30"
+			year: dataJSON.year,
+			month: dataJSON.month,
+			day: dataJSON.day
 		});
 
 	};
