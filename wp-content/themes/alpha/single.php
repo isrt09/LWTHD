@@ -16,7 +16,8 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-10">
-                                    <p><strong><?php the_author() ?></strong><br/>
+                                    <!-- <p><strong><?php the_author() ?></strong><br/> -->
+                                    <p><strong><?php the_author_posts_link(); ?></strong><br/>
                                         <?php echo get_the_date('M d, Y'); ?>, <?php the_time('g:i A'); ?>  
                                     </p>                        
                                 </div>
