@@ -20,7 +20,7 @@
                                     <p><strong><?php the_author_posts_link(); ?></strong><br/>
                                         <?php echo get_the_date('M d, Y'); ?>, <?php the_time('g:i A'); ?>  
                                     </p>                        
-                                </div>
+                                </div>                                
                                 <div class="col-md-10">
                                    <?php 
                                         if(has_post_thumbnail()){

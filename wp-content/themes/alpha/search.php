@@ -3,7 +3,7 @@
 <?php get_template_part('template-parts/common/hero'); ?>
 <div class="posts">
     <?php
-        if(!have_posts()) {?>
+        if(is_search()) {?>
             <h3 class="text-center"><?php _e("Not Found!! Please Try Again...","alpha"); ?></h3>
         <?php }
         while(have_posts()){
