@@ -28,13 +28,19 @@
                                             echo '<a href="'.$thumbnail_url.'" data-featherlight="image">';
                                             the_post_thumbnail('large',['class'=>'img-fluid']);
                                             echo "</a>";
-                                            the_content();
-                                            wp_link_pages();
-                                            next_post_link();
-                                            previous_post_link();
-                                        }
+                                            the_content();?>
+                                            
+                                            <?php 
+                                            if(get_post_format() == 'gallery') :
+                                            ?>
+                                            <p><b>Camer Model : </b><?php echo esc_html(get_field('camera_model')); ?></p>
+                                            <p><b>Location : </b><?php echo esc_html(get_field('location')); ?></p>
+                                            <?php
+                                            endif;
+                                            ?>
+                                       <?php }
                                     ?>                                                                     
-                                </div>
+                                </div>                                
                                 <?php  if(comments_open()) :?>                                     
                                     <div class="col-md-10 offset-md-1">                       
                                        <?php comments_template(); ?>

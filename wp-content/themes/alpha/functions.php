@@ -20,6 +20,7 @@ function alpha_bootstrap(){
 	add_theme_support('custom-logo', $alpha_custom_logo_info);
 	add_theme_support('custom-header',$alpha_custom_header);
 	add_theme_support('custom-background');
+	add_theme_support('post-formats',['video','audio','gallery']);
 	add_theme_support( 'html5', array( 'search-form' ) );
 	register_nav_menu('topmenu',__("Top Menu","alpha"));
 	register_nav_menu('footermenu',__("Footer Menu","alpha"));

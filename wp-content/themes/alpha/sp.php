@@ -13,13 +13,14 @@ Template Name: Custom Query
                 <?php 
                     if(have_posts()){
                         $query = get_posts(array(
-                            'post__in' => array(4,6,8),
+                            'post__in'=> array(4,6,8),
+                            'orderby' => 'post__in'                            
                         ));
                         foreach($query as $post){
                             setup_postdata($post); ?>
-                        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                        <p><?php the_content(); ?></p>
+                        <h2><a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a></h2>
                     <?php   }
+                            wp_reset_postdata();
                     }
                  ?>      
             </div>      
@@ -30,6 +31,11 @@ Template Name: Custom Query
                     dynamic_sidebar('sidebar-1');
                 }
              ?>
+            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                <!-- code here -->
+            <?php endwhile; else : ?>
+                <!-- code here -->
+            <?php endif; ?>
         </div>
     </div>
 </div>
